@@ -12,8 +12,9 @@ fixed-seed YAML config.
 
 ## Headline results
 
-Full tables and readings in [RESULTS.md](RESULTS.md); raw values in
-`results/*.json`. The benchmark scene is a 48x48 scan over 8 Voronoi
+[RESULTS.md](RESULTS.md) carries the full tables and the reading of each
+one; the raw numbers live in `results/*.json`. The benchmark scene is a
+48x48 scan over 8 Voronoi
 grains in 2 phases at 300 electrons per pattern, scored on grain-interior
 pixels against exact local ground truth, mean of 3 seeded scans.
 
