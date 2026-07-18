@@ -1,0 +1,24 @@
+# Pattern-resolution sweep: detector pixels per side at fixed k_max.
+# Rendering pixel-integrates the spots, so low resolutions bin flux rather
+# than alias it. Templates are built natively per resolution; the CNN input
+# is bilinearly resampled to its 64 px training resolution (documented).
+mode: sweep
+name: resolution_sweep
+seed: 20260718
+scans_per_condition: 3
+scene:
+  scan_shape: [48, 48]
+  n_grains: 8
+  dose: 300
+  mosaic_sigma: 0.3
+sweep:
+  parameter: pattern_px
+  values: [16, 32, 48, 64]
+methods: [template, cnn]
+template:
+  step_deg: 0.5
+  refine: true
+cnn:
+  model: models/orientnet.pt
+purity_threshold: 0.95
+output: results/resolution_sweep.json

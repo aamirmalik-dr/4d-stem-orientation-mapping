@@ -1,0 +1,17 @@
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+*.egg-info/
+
+# Full datasets and large artifacts are never committed; the small sample
+# scan, committed figures, results JSONs and the small CNN weights are.
+data/full/
+scratch/
+demo_map.png

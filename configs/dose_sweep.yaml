@@ -1,0 +1,20 @@
+# Dose sweep: electrons per diffraction pattern, from starved to comfortable.
+mode: sweep
+name: dose_sweep
+seed: 20260718
+scans_per_condition: 3
+scene:
+  scan_shape: [48, 48]
+  n_grains: 8
+  mosaic_sigma: 0.3
+sweep:
+  parameter: dose
+  values: [10, 30, 100, 300, 1000, 3000]
+methods: [template, cnn]
+template:
+  step_deg: 0.5
+  refine: true
+cnn:
+  model: models/orientnet.pt
+purity_threshold: 0.95
+output: results/dose_sweep.json

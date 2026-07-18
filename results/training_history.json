@@ -1,0 +1,454 @@
+{
+  "settings": {
+    "steps": 6000,
+    "batch_size": 64,
+    "lr": 0.001,
+    "dose_range": [
+      10.0,
+      3000.0
+    ],
+    "mixture_prob": 0.3,
+    "mixture_dominant_range": [
+      0.55,
+      0.95
+    ],
+    "scale_jitter": 0.02,
+    "center_jitter": 0.4,
+    "direct_range": [
+      0.15,
+      0.35
+    ],
+    "background_range": [
+      0.08,
+      0.25
+    ],
+    "angle_loss_weight": 2.0,
+    "val_every": 100,
+    "val_size": 512,
+    "seed": 20260718
+  },
+  "steps": [
+    {
+      "step": 100,
+      "train_loss": 0.5265410542488098,
+      "val_phase_accuracy": 0.8828125,
+      "val_angle_mae_deg": 3.5440354429403316,
+      "val_angle_median_deg": 1.8083923997294882
+    },
+    {
+      "step": 200,
+      "train_loss": 0.18126416206359863,
+      "val_phase_accuracy": 0.943359375,
+      "val_angle_mae_deg": 2.4755861109065833,
+      "val_angle_median_deg": 1.3421073484032355
+    },
+    {
+      "step": 300,
+      "train_loss": 0.19471612572669983,
+      "val_phase_accuracy": 0.96875,
+      "val_angle_mae_deg": 2.467205761086562,
+      "val_angle_median_deg": 1.2533251957104667
+    },
+    {
+      "step": 400,
+      "train_loss": 0.16182614862918854,
+      "val_phase_accuracy": 0.9765625,
+      "val_angle_mae_deg": 2.064231084054641,
+      "val_angle_median_deg": 0.9777532150777972
+    },
+    {
+      "step": 500,
+      "train_loss": 0.13934750854969025,
+      "val_phase_accuracy": 0.96875,
+      "val_angle_mae_deg": 2.1075562895147537,
+      "val_angle_median_deg": 0.9897046859369771
+    },
+    {
+      "step": 600,
+      "train_loss": 0.09878713637590408,
+      "val_phase_accuracy": 0.970703125,
+      "val_angle_mae_deg": 1.9583876818441248,
+      "val_angle_median_deg": 0.8925172899077021
+    },
+    {
+      "step": 700,
+      "train_loss": 0.2906671166419983,
+      "val_phase_accuracy": 0.9765625,
+      "val_angle_mae_deg": 1.7763462288321776,
+      "val_angle_median_deg": 0.8581859138138519
+    },
+    {
+      "step": 800,
+      "train_loss": 0.10826380550861359,
+      "val_phase_accuracy": 0.97265625,
+      "val_angle_mae_deg": 1.8012810718192358,
+      "val_angle_median_deg": 0.9379854871459203
+    },
+    {
+      "step": 900,
+      "train_loss": 0.12349709868431091,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.8433553427574585,
+      "val_angle_median_deg": 0.9673440836853566
+    },
+    {
+      "step": 1000,
+      "train_loss": 0.12222780287265778,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.64839746234611,
+      "val_angle_median_deg": 0.8451412232819102
+    },
+    {
+      "step": 1100,
+      "train_loss": 0.20943811535835266,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.6999862453282093,
+      "val_angle_median_deg": 0.828136794052047
+    },
+    {
+      "step": 1200,
+      "train_loss": 0.13717344403266907,
+      "val_phase_accuracy": 0.96484375,
+      "val_angle_mae_deg": 1.5066884489651773,
+      "val_angle_median_deg": 0.646841971641245
+    },
+    {
+      "step": 1300,
+      "train_loss": 0.06637916713953018,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.6217904361109583,
+      "val_angle_median_deg": 0.781028901714345
+    },
+    {
+      "step": 1400,
+      "train_loss": 0.12422135472297668,
+      "val_phase_accuracy": 0.974609375,
+      "val_angle_mae_deg": 1.8158612345502618,
+      "val_angle_median_deg": 1.0251101622733785
+    },
+    {
+      "step": 1500,
+      "train_loss": 0.16954323649406433,
+      "val_phase_accuracy": 0.974609375,
+      "val_angle_mae_deg": 1.5990348677891344,
+      "val_angle_median_deg": 0.6968013747596249
+    },
+    {
+      "step": 1600,
+      "train_loss": 0.15021581947803497,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.545622506509903,
+      "val_angle_median_deg": 0.7717686202945231
+    },
+    {
+      "step": 1700,
+      "train_loss": 0.10313287377357483,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.5423001767205453,
+      "val_angle_median_deg": 0.7485525769724553
+    },
+    {
+      "step": 1800,
+      "train_loss": 0.06943642348051071,
+      "val_phase_accuracy": 0.978515625,
+      "val_angle_mae_deg": 1.4084361722632925,
+      "val_angle_median_deg": 0.6320855593030679
+    },
+    {
+      "step": 1900,
+      "train_loss": 0.04295062646269798,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.4600240599158714,
+      "val_angle_median_deg": 0.7213049324556806
+    },
+    {
+      "step": 2000,
+      "train_loss": 0.13593348860740662,
+      "val_phase_accuracy": 0.978515625,
+      "val_angle_mae_deg": 1.4970678550270464,
+      "val_angle_median_deg": 0.7038057972747502
+    },
+    {
+      "step": 2100,
+      "train_loss": 0.09513138234615326,
+      "val_phase_accuracy": 0.982421875,
+      "val_angle_mae_deg": 1.403564985302603,
+      "val_angle_median_deg": 0.6709585907496347
+    },
+    {
+      "step": 2200,
+      "train_loss": 0.06617512553930283,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.3708607116091287,
+      "val_angle_median_deg": 0.6865863759860495
+    },
+    {
+      "step": 2300,
+      "train_loss": 0.04929599165916443,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.4883631551958203,
+      "val_angle_median_deg": 0.7753477427983757
+    },
+    {
+      "step": 2400,
+      "train_loss": 0.14614629745483398,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.471597942826573,
+      "val_angle_median_deg": 0.8431106916836661
+    },
+    {
+      "step": 2500,
+      "train_loss": 0.03654177486896515,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.5267311578648304,
+      "val_angle_median_deg": 0.7759392238964988
+    },
+    {
+      "step": 2600,
+      "train_loss": 0.0689200833439827,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.3375519243569758,
+      "val_angle_median_deg": 0.5890420871537216
+    },
+    {
+      "step": 2700,
+      "train_loss": 0.09558698534965515,
+      "val_phase_accuracy": 0.9921875,
+      "val_angle_mae_deg": 1.5384971216412098,
+      "val_angle_median_deg": 0.6427377945305359
+    },
+    {
+      "step": 2800,
+      "train_loss": 0.07296757400035858,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.4184420453368716,
+      "val_angle_median_deg": 0.767151201761358
+    },
+    {
+      "step": 2900,
+      "train_loss": 0.13804002106189728,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.4847660297792187,
+      "val_angle_median_deg": 0.873241015925899
+    },
+    {
+      "step": 3000,
+      "train_loss": 0.06924715638160706,
+      "val_phase_accuracy": 0.990234375,
+      "val_angle_mae_deg": 1.403326336114962,
+      "val_angle_median_deg": 0.7238308142092613
+    },
+    {
+      "step": 3100,
+      "train_loss": 0.06703061610460281,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.38794984347505,
+      "val_angle_median_deg": 0.6644661185030829
+    },
+    {
+      "step": 3200,
+      "train_loss": 0.06649041920900345,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.468974468672981,
+      "val_angle_median_deg": 0.7508126209194117
+    },
+    {
+      "step": 3300,
+      "train_loss": 0.06775666028261185,
+      "val_phase_accuracy": 0.982421875,
+      "val_angle_mae_deg": 1.3539767803368454,
+      "val_angle_median_deg": 0.7518119951471647
+    },
+    {
+      "step": 3400,
+      "train_loss": 0.09214907884597778,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.3869937205620355,
+      "val_angle_median_deg": 0.614743897927692
+    },
+    {
+      "step": 3500,
+      "train_loss": 0.09268644452095032,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.3410652291695904,
+      "val_angle_median_deg": 0.7030315204582678
+    },
+    {
+      "step": 3600,
+      "train_loss": 0.05185190588235855,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.3547724850398426,
+      "val_angle_median_deg": 0.6438660549098039
+    },
+    {
+      "step": 3700,
+      "train_loss": 0.08537024259567261,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.532022422240124,
+      "val_angle_median_deg": 0.9397974538580076
+    },
+    {
+      "step": 3800,
+      "train_loss": 0.10789027810096741,
+      "val_phase_accuracy": 0.982421875,
+      "val_angle_mae_deg": 1.4638368641335573,
+      "val_angle_median_deg": 0.7782491032767886
+    },
+    {
+      "step": 3900,
+      "train_loss": 0.05739087611436844,
+      "val_phase_accuracy": 0.982421875,
+      "val_angle_mae_deg": 1.451795493373751,
+      "val_angle_median_deg": 0.7326452021901559
+    },
+    {
+      "step": 4000,
+      "train_loss": 0.07429888099431992,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.4261640538569247,
+      "val_angle_median_deg": 0.6419065311512497
+    },
+    {
+      "step": 4100,
+      "train_loss": 0.07533091306686401,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.3982443689190112,
+      "val_angle_median_deg": 0.6993463204883232
+    },
+    {
+      "step": 4200,
+      "train_loss": 0.06936085224151611,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.3503826341959906,
+      "val_angle_median_deg": 0.6034406804064893
+    },
+    {
+      "step": 4300,
+      "train_loss": 0.05720355361700058,
+      "val_phase_accuracy": 0.9921875,
+      "val_angle_mae_deg": 1.2701098761269476,
+      "val_angle_median_deg": 0.6313057300405163
+    },
+    {
+      "step": 4400,
+      "train_loss": 0.08704435080289841,
+      "val_phase_accuracy": 0.982421875,
+      "val_angle_mae_deg": 1.2896726682140087,
+      "val_angle_median_deg": 0.5428972427873351
+    },
+    {
+      "step": 4500,
+      "train_loss": 0.04576076567173004,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.353658046564934,
+      "val_angle_median_deg": 0.7390799529088774
+    },
+    {
+      "step": 4600,
+      "train_loss": 0.06803181022405624,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.3227909923440633,
+      "val_angle_median_deg": 0.6026003686626993
+    },
+    {
+      "step": 4700,
+      "train_loss": 0.06708234548568726,
+      "val_phase_accuracy": 0.982421875,
+      "val_angle_mae_deg": 1.3512088555823176,
+      "val_angle_median_deg": 0.6561146300501948
+    },
+    {
+      "step": 4800,
+      "train_loss": 0.09525299072265625,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.2903673832324518,
+      "val_angle_median_deg": 0.606953266100291
+    },
+    {
+      "step": 4900,
+      "train_loss": 0.08065260201692581,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.2850959708608674,
+      "val_angle_median_deg": 0.6587447205516632
+    },
+    {
+      "step": 5000,
+      "train_loss": 0.1157427579164505,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.2296397442388585,
+      "val_angle_median_deg": 0.5631324005398879
+    },
+    {
+      "step": 5100,
+      "train_loss": 0.19585861265659332,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.3510542947987867,
+      "val_angle_median_deg": 0.6349408995364687
+    },
+    {
+      "step": 5200,
+      "train_loss": 0.1325031816959381,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.3666690203064953,
+      "val_angle_median_deg": 0.7103290642540472
+    },
+    {
+      "step": 5300,
+      "train_loss": 0.08058521896600723,
+      "val_phase_accuracy": 0.98046875,
+      "val_angle_mae_deg": 1.3221156255955373,
+      "val_angle_median_deg": 0.7147409015831152
+    },
+    {
+      "step": 5400,
+      "train_loss": 0.07212169468402863,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.2707972002550885,
+      "val_angle_median_deg": 0.6350606201439959
+    },
+    {
+      "step": 5500,
+      "train_loss": 0.034387219697237015,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.3580454618957827,
+      "val_angle_median_deg": 0.7116279255581142
+    },
+    {
+      "step": 5600,
+      "train_loss": 0.08247581869363785,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.3043486345262438,
+      "val_angle_median_deg": 0.6297080797896761
+    },
+    {
+      "step": 5700,
+      "train_loss": 0.0749116837978363,
+      "val_phase_accuracy": 0.984375,
+      "val_angle_mae_deg": 1.3888150933236822,
+      "val_angle_median_deg": 0.6173482994473325
+    },
+    {
+      "step": 5800,
+      "train_loss": 0.11120602488517761,
+      "val_phase_accuracy": 0.986328125,
+      "val_angle_mae_deg": 1.385392685226399,
+      "val_angle_median_deg": 0.5468321644993146
+    },
+    {
+      "step": 5900,
+      "train_loss": 0.09756545722484589,
+      "val_phase_accuracy": 0.98828125,
+      "val_angle_mae_deg": 1.3290783349104203,
+      "val_angle_median_deg": 0.658455150795211
+    },
+    {
+      "step": 6000,
+      "train_loss": 0.04139210283756256,
+      "val_phase_accuracy": 0.982421875,
+      "val_angle_mae_deg": 1.317651054134243,
+      "val_angle_median_deg": 0.6597030064128475
+    }
+  ],
+  "width": 24,
+  "train_seconds": 975.980251099998
+}

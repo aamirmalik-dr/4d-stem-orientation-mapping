@@ -1,0 +1,64 @@
+{
+  "operating_point": {
+    "scan_shape": [
+      48,
+      48
+    ],
+    "n_grains": 8,
+    "dose": 300,
+    "mosaic_sigma": 0.3
+  },
+  "template": {
+    "orientation_mae_deg": 0.2763,
+    "orientation_mae_deg_std": 0.0041,
+    "interior_orientation_mae_deg": 0.2482,
+    "phase_accuracy": 0.999,
+    "interior_phase_accuracy": 1.0,
+    "frac_within_1deg": 0.9923,
+    "ms_per_pattern": 0.118
+  },
+  "cnn": {
+    "orientation_mae_deg": 0.6783,
+    "orientation_mae_deg_std": 0.0784,
+    "interior_orientation_mae_deg": 0.5954,
+    "phase_accuracy": 0.9986,
+    "interior_phase_accuracy": 1.0,
+    "frac_within_1deg": 0.8059,
+    "ms_per_pattern": 0.228
+  },
+  "clustering": {
+    "ari_at_true_k": 0.8676,
+    "ari_std": 0.1214,
+    "nmi": 0.9142,
+    "ari_at_selected_k": 0.8888,
+    "selected_k_mean": 6.67
+  },
+  "lowest_dose": {
+    "dose": 10,
+    "template": {
+      "interior_orientation_mae_deg": 1.8633,
+      "interior_phase_accuracy": 0.9599
+    },
+    "cnn": {
+      "interior_orientation_mae_deg": 3.2545,
+      "interior_phase_accuracy": 0.9328
+    }
+  },
+  "forward_model_mismatch": {
+    "template": {
+      "interior_orientation_mae_deg": 0.989,
+      "interior_phase_accuracy": 0.9986
+    },
+    "cnn": {
+      "interior_orientation_mae_deg": 1.1375,
+      "interior_phase_accuracy": 0.9993
+    }
+  },
+  "best_template_setting": {
+    "step_deg": 2.0,
+    "refine": true,
+    "n_templates": 75,
+    "interior_orientation_mae_deg": 0.2464,
+    "ms_per_pattern": 0.128
+  }
+}

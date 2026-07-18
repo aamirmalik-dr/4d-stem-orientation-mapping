@@ -1,0 +1,22 @@
+# Orientation-spread sweep: intra-grain mosaic sigma in degrees.
+# The per-position jitter IS the ground truth, so this measures how well each
+# method tracks small local rotations, not just the grain mean.
+mode: sweep
+name: mosaic_sweep
+seed: 20260718
+scans_per_condition: 3
+scene:
+  scan_shape: [48, 48]
+  n_grains: 8
+  dose: 300
+sweep:
+  parameter: mosaic_sigma
+  values: [0.0, 0.5, 1.0, 2.0, 5.0]
+methods: [template, cnn]
+template:
+  step_deg: 0.5
+  refine: true
+cnn:
+  model: models/orientnet.pt
+purity_threshold: 0.95
+output: results/mosaic_sweep.json

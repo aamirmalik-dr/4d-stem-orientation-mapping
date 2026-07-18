@@ -1,0 +1,21 @@
+# Grain-count sweep at fixed scan size: more grains means smaller grains and
+# a larger boundary fraction (probe positions with mixed patterns).
+mode: sweep
+name: grain_sweep
+seed: 20260718
+scans_per_condition: 3
+scene:
+  scan_shape: [48, 48]
+  dose: 300
+  mosaic_sigma: 0.3
+sweep:
+  parameter: n_grains
+  values: [4, 8, 16, 32]
+methods: [template, cnn]
+template:
+  step_deg: 0.5
+  refine: true
+cnn:
+  model: models/orientnet.pt
+purity_threshold: 0.95
+output: results/grain_sweep.json

@@ -1,0 +1,35 @@
+# Forward-model mismatch: the scans carry a different intensity budget than
+# the template library assumes (direct beam 45 percent instead of 25,
+# background 30 percent instead of 15 and narrower, plus stronger descan
+# wobble). On a real instrument the library is always built from an imperfect
+# forward model; this config measures which method degrades. The CNN is used
+# unchanged (it was trained with randomised budgets of 15-35 / 8-25 percent,
+# so this condition is extrapolation for it too).
+mode: compare
+name: mismatch
+seed: 20260718
+scans_per_condition: 3
+scene:
+  scan_shape: [48, 48]
+  n_grains: 8
+  dose: 300
+  mosaic_sigma: 0.3
+  center_jitter: 1.0
+detector:
+  direct_fraction: 0.45
+  background_fraction: 0.30
+  background_width: 0.35
+methods: [template, cnn]
+template:
+  step_deg: 0.5
+  refine: true
+  library_detector:
+    direct_fraction: 0.25
+    background_fraction: 0.15
+    background_width: 0.55
+cnn:
+  model: models/orientnet.pt
+clustering:
+  enabled: false
+purity_threshold: 0.95
+output: results/mismatch.json
