@@ -1,5 +1,7 @@
 # 4d-stem-orientation-mapping
 
+*Origin: Originally developed during the 4th Summer School on ML/AI for Electron Microscopy (June 2026); refactored and open-sourced in July 2026.*
+
 Orientation and phase mapping from simulated 4D-STEM data: a kinematical
 polycrystal simulator with exact per-position ground truth, virtual
 imaging, template matching with sub-step refinement, a symmetry-aware CNN,
