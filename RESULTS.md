@@ -20,7 +20,7 @@ means a method tracks orientation below the mosaic disorder.
 `configs/compare.yaml`, results in `results/compare.json` and
 `results/metrics.json`.
 
-| Method | Orientation MAE (deg), interior | MAE all pixels | Phase accuracy (all) | Within 1 deg | ms per pattern |
+| Method | Orientation MAE (deg), interior | MAE all pixels | Phase accuracy (all) | Within 1 deg (all) | ms per pattern |
 |---|---|---|---|---|---|
 | Template matching (0.5 deg library, refined) | **0.248 +/- 0.004** | 0.276 | 0.999 | 0.992 | **0.118** |
 | CNN (157k params) | 0.595 +/- 0.051 | 0.678 | 0.999 | 0.806 | 0.228 |
@@ -56,7 +56,10 @@ roughly 6 electrons carry all Bragg information.
 Two readings. First, template matching keeps improving as photons arrive
 (0.072 degrees at dose 3000, photon-limited), while the CNN saturates at a
 ~0.4-0.5 degree regression floor from about dose 300; direct angle
-regression does not converge to the shot-noise limit. Second, at the
+regression does not converge to the shot-noise limit. That floor is a
+property of this 157k-parameter network and its 6000-step training budget
+(the validation curve is flat over the last third of training); a larger
+model or longer schedule might lower it, and was not explored. Second, at the
 starved end the CNN degrades faster, not slower: dose 10 is 1.86 versus
 3.25 degrees. Deep learning is not a dose saviour when the classical
 competitor knows the true forward model.
@@ -77,6 +80,11 @@ identical scans.
 | 0.25 deg | 600 | 0.248 | 0.254 | 0.137 |
 | CNN | | 0.595 | | 0.231 |
 
+Per-pattern cost is matching wall-clock only: the one-time library build
+(0.37 s for 300 templates, 0.69 s for 600, measured in the fresh
+reproduction venv) and the one-time CNN weight load are both excluded, and
+amortize to nothing over a full scan.
+
 The load-bearing component is the parabolic refinement, not library
 density: a 30-template library with refinement (0.266 degrees) already
 beats the CNN, and beyond a 2-degree step the refined error is flat at the
@@ -95,7 +103,7 @@ px). This models the practical case of a miscalibrated forward model. The
 CNN runs unchanged; its training randomisation covered budgets of 15-35 /
 8-25 percent, so this condition extrapolates for it too.
 
-| Method | MAE (deg), interior | Within 1 deg | Phase accuracy (all) |
+| Method | MAE (deg), interior | Within 1 deg (all) | Phase accuracy (all) |
 |---|---|---|---|
 | Template matching | **0.989 +/- 0.034** | 0.714 | 0.991 |
 | CNN | 1.137 +/- 0.035 | 0.534 | 0.992 |

@@ -51,7 +51,9 @@ All numbers from the committed fixed-seed benchmarks (see RESULTS.md):
   cite this model as evidence that deep learning improves 4D-STEM
   orientation mapping accuracy.
 - The angle head has a regression floor around 0.4-0.5 degrees; it does not
-  reach the shot-noise limit at high dose.
+  reach the shot-noise limit at high dose. The floor is measured for this
+  capacity and training budget (validation MAE is flat over the last third
+  of training); a larger network or longer schedule was not explored.
 - Trained purely on this simulator (kinematical, two specific phases,
   Gaussian spots, fixed k_max 1.35 1/angstrom). It will not transfer to
   experimental patterns or other crystal structures without retraining;
