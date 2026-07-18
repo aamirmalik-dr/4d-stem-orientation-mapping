@@ -91,7 +91,10 @@ def _sweep_figure(
                 ax.set_xscale("log")
             ax.grid(alpha=0.3)
     axes[0].legend(fontsize=8)
-    fig.suptitle(title or f"{name} (grain-interior pixels, mean +/- std over 3 scans)", fontsize=11)
+    fig.suptitle(
+        title or f"{name.replace('_', ' ')} (grain-interior pixels, mean +/- std over 3 scans)",
+        fontsize=11,
+    )
     fig.tight_layout()
     fig.savefig(FIG / out, dpi=150)
     plt.close(fig)
@@ -238,6 +241,8 @@ def template_tuning_figure() -> None:
     )
     axes[1].axhline(cnn["seconds_per_pattern"]["mean"] * 1e3, color="#d62728", ls="--", label="CNN")
     axes[0].set_yscale("log")
+    axes[0].set_yticks([0.25, 0.35, 0.5, 0.7, 1.0])
+    axes[0].yaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
     for ax, ylabel in [(axes[0], "orientation MAE (deg)"), (axes[1], "cost (ms per pattern)")]:
         ax.set_xlabel("library step (deg)")
         ax.set_ylabel(ylabel)
@@ -265,7 +270,7 @@ def clustering_figure() -> None:
 
     fig, axes = plt.subplots(1, 3, figsize=(11.5, 3.6))
     axes[0].imshow(res.labels, cmap="tab20", interpolation="nearest")
-    axes[0].set_title(f"k-means clusters, k=8 (ARI {ari:.2f})", fontsize=9)
+    axes[0].set_title(f"k-means clusters, k={int(params.n_grains)} (ARI {ari:.2f})", fontsize=9)
     axes[1].imshow(scan.grain_id, cmap="tab20", interpolation="nearest")
     axes[1].set_title("ground-truth grains", fontsize=9)
     for ax in axes[:2]:
@@ -301,7 +306,8 @@ def training_figure() -> None:
         ax.set_xlabel("step")
         ax.grid(alpha=0.3)
     fig.suptitle(
-        "CNN training on the randomised validation set (doses 10-3000, mixtures included)",
+        "CNN training curves; validation on the randomised stream (doses 10-3000, "
+        "mixtures included)",
         fontsize=10,
     )
     fig.tight_layout()
