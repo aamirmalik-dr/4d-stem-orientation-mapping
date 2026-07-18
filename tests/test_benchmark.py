@@ -97,10 +97,7 @@ def test_template_tuning_mode(tmp_path):
         "cnn": {"model": "models/orientnet.pt"},
         "output": "results/tiny_tuning.json",
     }
-    # No CNN model in tmp_path: template settings must still run, so patch the
-    # config to skip the CNN reference by monkeypatching is avoided; instead we
-    # train nothing and expect failure only at the CNN step. Simplest honest
-    # check: run with a real tiny model.
+    # The CNN reference needs real weights, so train a tiny model into tmp_path.
     import orient4d.net as net_mod
     from orient4d.train import TrainSettings, train
 

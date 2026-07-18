@@ -50,7 +50,8 @@ def test_first_ring_radii_match_lattice():
 
 
 def test_honeycomb_structure_factor_modulation():
-    # Graphene basis: |F|^2 is 4x the single-atom value when h + 2k = 0 mod 3.
+    # Honeycomb basis at (1/3, 1/3) with 60-degree lattice vectors: |F|^2 is
+    # 4x the single-atom value when h + k = 0 mod 3, and 1x otherwise.
     g, inten = lattice_reflections(PHASES["hexagonal"], 1.35)
     r = np.linalg.norm(g, axis=1)
     first_ring = inten[np.isclose(r, r.min(), rtol=1e-3)]
@@ -58,7 +59,7 @@ def test_honeycomb_structure_factor_modulation():
     second_ring = inten[np.isclose(r, second_ring_r, rtol=1e-3)]
     assert len(first_ring) == 6
     assert len(second_ring) == 6
-    # First ring (h+2k not divisible by 3) is the weak family here.
+    # First ring (h + k not divisible by 3) is the weak family here.
     ratio = second_ring.mean() / first_ring.mean()
     envelope = np.exp(-2 * 0.7 * (second_ring_r**2 - r.min() ** 2))
     assert ratio == pytest.approx(4.0 * envelope, rel=0.05)

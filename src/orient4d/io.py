@@ -20,7 +20,7 @@ from .sim import DetectorGeometry, Scan4D, SceneParams
 def save_scan(scan: Scan4D, path: str | Path) -> None:
     """Write a scan and its ground truth to a compressed .npz file."""
     data = scan.data
-    if data.max() < 65535 and np.allclose(data, np.round(data)):
+    if data.max() <= 65535 and np.allclose(data, np.round(data)):
         data = data.astype(np.uint16)
     meta = {
         "det": asdict(scan.det),
