@@ -199,7 +199,9 @@ def hero_figure() -> None:
         fontsize=12,
     )
     fig.tight_layout()
-    fig.savefig(FIG / "hero.png", dpi=150)
+    # Higher dpi so the short side clears 1080 px for social posts; layout,
+    # colormaps and fonts are unchanged.
+    fig.savefig(FIG / "hero.png", dpi=170)
     plt.close(fig)
 
 
