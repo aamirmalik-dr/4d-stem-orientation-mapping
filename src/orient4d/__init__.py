@@ -21,7 +21,7 @@ from .sim import (
 from .template import TemplateLibrary, build_library, match
 from .virtual import annular_dark_field, bright_field, spot_dark_field, virtual_image
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "PHASE_NAMES",
