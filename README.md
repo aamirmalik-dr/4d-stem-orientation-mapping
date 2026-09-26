@@ -1,5 +1,7 @@
 # 4d-stem-orientation-mapping
 
+[![ci](https://github.com/aamirmalik-dr/4d-stem-orientation-mapping/actions/workflows/ci.yml/badge.svg)](https://github.com/aamirmalik-dr/4d-stem-orientation-mapping/actions/workflows/ci.yml)
+
 Orientation and phase mapping from simulated 4D-STEM data: a kinematical
 polycrystal simulator with exact per-position ground truth, virtual
 imaging, template matching with sub-step refinement, a symmetry-aware CNN,
