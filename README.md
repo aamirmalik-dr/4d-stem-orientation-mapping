@@ -175,6 +175,17 @@ tests/              47 pytest tests
 - The committed CNN is specific to the two shipped phases and this
   simulator (see the model card).
 
+## Related repositories
+
+This repository is one of seven on machine learning for electron microscopy. Each pairs a physics-motivated simulator with exact ground truth, a baseline tuned on equal terms, and a fixed-seed benchmark harness that regenerates every committed number, and each is standalone and imports nothing from the others.
+
+- [stem-atom-finder](https://github.com/aamirmalik-dr/stem-atom-finder): atomic column detection in HAADF-STEM, classical detectors and U-Nets benchmarked across dose, material, drift, and disorder, with sub-pixel refinement.
+- [stem-denoising-restoration](https://github.com/aamirmalik-dr/stem-denoising-restoration): low-dose HAADF-STEM restoration, classical denoisers against supervised and Noise2Noise U-Nets, scored by image fidelity and by downstream atom detection.
+- [stem-defect-segmentation](https://github.com/aamirmalik-dr/stem-defect-segmentation): pixel-level segmentation of vacancies, dopants, and disordered regions, a threshold pipeline and a random forest against a multi-class U-Net, scored per class.
+- [diffraction-structure-classifier](https://github.com/aamirmalik-dr/diffraction-structure-classifier): crystal structure type from simulated electron diffraction, a fair-tuned classical baseline against 1D and 2D CNNs, with a lattice-parameter shortcut control.
+- [eels-spectrum-unmixing](https://github.com/aamirmalik-dr/eels-spectrum-unmixing): endmember and abundance recovery from simulated STEM-EELS spectrum images with PCA, NMF, VCA, and a constrained autoencoder under dose, drift, and overlap.
+- [active-learning-microscopy](https://github.com/aamirmalik-dr/active-learning-microscopy): a from-scratch Gaussian process steering a simulated probe, benchmarked against space-filling designs on equal terms.
+
 ## Author
 
 Aamir Malik
